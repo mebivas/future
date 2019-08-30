@@ -1,0 +1,38 @@
+ Public Sub clearControls(grd As Panel)
+        For i As Int32 = 0 To grd.Controls.Count - 1
+            If grd.Controls.Item(i).GetType = GetType(TextBox) Then
+                Dim txtbox As TextBox = CType(grd.Controls.Item(i), TextBox)
+                txtbox.Text = ""
+
+            End If
+            If grd.Controls.Item(i).GetType = GetType(Label) Then
+                Dim txtbox As Label = CType(grd.Controls.Item(i), Label)
+                txtbox.Text = ""
+
+            End If
+
+            If grd.Controls.Item(i).GetType = GetType(DropDownList) Then
+                Dim combo As DropDownList = CType(grd.Controls.Item(i), DropDownList)
+                combo.SelectedIndex = -1
+
+            End If
+
+
+            If grd.Controls.Item(i).GetType = GetType(CheckBox) Then
+                Dim combo As CheckBox = CType(grd.Controls.Item(i), CheckBox)
+                combo.Checked = False
+
+            End If
+
+
+            If grd.Controls.Item(i).GetType = GetType(Image) Then
+                Dim combo As Image = CType(grd.Controls.Item(i), Image)
+                combo.ImageUrl = Nothing
+
+            End If
+
+        Next
+
+
+
+    End Sub
